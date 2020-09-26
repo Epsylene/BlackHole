@@ -2,7 +2,7 @@
 #pragma once
 
 #include "SFML/Window.hpp"
-#include "SFML/Graphics.hpp"
+#include "Vector2.h"
 
 class Drawer
 {
@@ -10,14 +10,20 @@ class Drawer
 
         sf::RenderWindow window;
         sf::Event sfEvent;
+        sf::Clock sfClock;
+        float dt;
 
-        sf::Texture backgroundTex;
-        sf::Image backgroundImg;
-        sf::Sprite background;
+        sf::CircleShape blackHole;
+
+        Vector2 pPos;
+        Vector2 pVel;
+        sf::VertexArray lines;
 
     public:
 
         Drawer();
+
+        void updateParticle();
 
         void update();
         void render();
