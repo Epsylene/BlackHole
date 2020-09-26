@@ -3,6 +3,7 @@
 
 #include "SFML/Window.hpp"
 #include "Vector2.h"
+#include "BlackHole.h"
 
 class Drawer
 {
@@ -13,11 +14,7 @@ class Drawer
         sf::Clock sfClock;
         float dt;
 
-        sf::CircleShape blackHole;
-
-        Vector2 pPos;
-        Vector2 pVel;
-        sf::VertexArray lines;
+        BlackHole blackHole;
 
     public:
 

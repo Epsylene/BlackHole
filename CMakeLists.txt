@@ -8,6 +8,6 @@ set(SFML_STATIC_LIBRARIES TRUE)
 
 find_package(SFML 2.5 COMPONENTS system window graphics)
 
-add_executable(${PROJECT_NAME} main.cpp Drawer.cpp Drawer.h Vector2.cpp Vector2.h)
+add_executable(${PROJECT_NAME} main.cpp Drawer.cpp Drawer.h Vector2.cpp Vector2.h BlackHole.cpp BlackHole.h)
 
 target_link_libraries(${PROJECT_NAME} sfml-system sfml-window sfml-graphics -static)
