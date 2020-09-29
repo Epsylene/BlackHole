@@ -9,16 +9,16 @@ BlackHole::BlackHole(float x, float y, float mass)
     rs = (2 * G * mass) / (c * c);
 
     blackHole.setPosition(x, y);
-    blackHole.setOrigin(rs / 2.f, rs / 2.f);
-    blackHole.setRadius(rs / 2.f);
+    blackHole.setOrigin(rs, rs);
+    blackHole.setRadius(rs);
     blackHole.setFillColor(sf::Color::Black);
 
     rsCircle.setPosition(x, y);
-    rsCircle.setOrigin(rs, rs);
-    rsCircle.setRadius(rs);
+    rsCircle.setOrigin(3*rs, 3*rs);
+    rsCircle.setRadius(3*rs);
     rsCircle.setOutlineThickness(1);
     rsCircle.setOutlineColor(sf::Color::Black);
-    rsCircle.setPointCount(50);
+    rsCircle.setPointCount(100);
 }
 
 void BlackHole::draw(sf::RenderWindow &window)

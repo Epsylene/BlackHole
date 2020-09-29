@@ -1,9 +1,9 @@
 
 #include "Drawer.h"
 
-Drawer::Drawer(): blackHole(0, 0, 20E28)
+Drawer::Drawer(): blackHole(0, 0, 5E28)
 {
-    window.create(sf::VideoMode(1280, 720), "Game of Life");
+    window.create(sf::VideoMode(1280, 720), "Black hole");
 
     blackHole.setPosition(window.getSize().x / 2.f,
                           window.getSize().y / 2.f);
@@ -38,11 +38,4 @@ void Drawer::run()
         update();
         render();
     }
-}
-
-void Drawer::updateParticle()
-{
-
-
-//    lines.append(sf::Vertex(pPos, sf::Color::Black));
 }

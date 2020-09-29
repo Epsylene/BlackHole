@@ -2,8 +2,8 @@
 #pragma once
 
 #include "SFML/Window.hpp"
-#include "Vector2.h"
-#include "BlackHole.h"
+#include "Utilities/Vector2.h"
+#include "Objects/BlackHole.h"
 
 class Drawer
 {
@@ -19,8 +19,6 @@ class Drawer
     public:
 
         Drawer();
-
-        void updateParticle();
 
         void update();
         void render();
