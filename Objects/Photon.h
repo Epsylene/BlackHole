@@ -17,6 +17,6 @@ class Photon
 
         Photon(float x, float y, float dir_vx, float dir_vy);
 
-        void move(float dx, float dy, float dt);
+        void update(float dt);
         void draw(sf::RenderWindow& window);
 };

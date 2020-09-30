@@ -1,7 +1,7 @@
 
 #include "Drawer.h"
 
-Drawer::Drawer(): blackHole(0, 0, 5E28)
+Drawer::Drawer(): blackHole(0, 0, 5E28), photon(0, 0, 1, 1)
 {
     window.create(sf::VideoMode(1280, 720), "Black hole");
 
@@ -19,6 +19,8 @@ void Drawer::update()
             window.close();
     }
 
+    photon.update(dt);
+
     sfClock.restart();
 }
 
@@ -27,6 +29,7 @@ void Drawer::render()
     window.clear(sf::Color::White);
 
     blackHole.draw(window);
+    photon.draw(window);
 
     window.display();
 }

@@ -38,6 +38,7 @@ Vector2::Vector2(Vector2 &vec)
 Vector2 Vector2::setMag(float m)
 {
     this->m_mag = m;
+    this->m_angle = std::atan2(y, x);
 
     x = m_mag * std::cos(m_angle);
     y = m_mag * std::sin(m_angle);

@@ -4,6 +4,7 @@
 #include "SFML/Window.hpp"
 #include "Utilities/Vector2.h"
 #include "Objects/BlackHole.h"
+#include "Objects/Photon.h"
 
 class Drawer
 {
@@ -15,6 +16,7 @@ class Drawer
         float dt;
 
         BlackHole blackHole;
+        Photon photon;
 
     public:
 

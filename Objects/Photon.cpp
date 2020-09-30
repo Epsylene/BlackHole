@@ -8,13 +8,13 @@ Photon::Photon(float x, float y, float dir_vx, float dir_vy)
     vel.setMag(Constants::c);
 
     trail.setPrimitiveType(sf::LineStrip);
-    trail.append(sf::Vertex(pos, sf::Color::Yellow));
+    trail.append(sf::Vertex(pos, sf::Color::Red));
 }
 
-void Photon::move(float dx, float dy, float dt)
+void Photon::update(float dt)
 {
-    pos += Vector2(dx, dy) * dt;
-    trail.append(sf::Vertex(pos, sf::Color::Yellow));
+    pos += vel * 1.E-7f * dt;
+    trail.append(sf::Vertex(pos, sf::Color::Red));
 }
 
 void Photon::draw(sf::RenderWindow& window)

@@ -18,6 +18,7 @@ BlackHole::BlackHole(float x, float y, float mass)
     rsCircle.setRadius(3*rs);
     rsCircle.setOutlineThickness(1);
     rsCircle.setOutlineColor(sf::Color::Black);
+    rsCircle.setFillColor(sf::Color::Transparent);
     rsCircle.setPointCount(100);
 }
 
