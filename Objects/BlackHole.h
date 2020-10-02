@@ -15,7 +15,7 @@ class BlackHole
     private:
 
         float mass;
-        float rs; //Schwartzild radius
+        float rs; //Schwarzschild radius
 
         sf::CircleShape rsCircle;
         sf::CircleShape blackHole;
