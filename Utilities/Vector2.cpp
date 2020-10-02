@@ -73,7 +73,7 @@ float Vector2::getMag(Vector2 vec)
 
 float Vector2::getAngle(Vector2 vec1, Vector2 vec2)
 {
-    //
+    return static_cast<float>(vec2.angle() - vec1.angle());
 }
 
 float Vector2::distance(Vector2 vec1, Vector2 vec2)
