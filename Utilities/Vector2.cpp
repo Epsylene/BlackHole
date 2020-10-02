@@ -21,7 +21,7 @@ Vector2::Vector2(sf::Vector2f vec)
     this->y = vec.y;
 
     m_mag = static_cast<float>(std::sqrt(std::pow(x, 2) + std::pow(y, 2)));
-    m_angle = static_cast<float>(std::atan2(y, x));
+    m_angle = std::atan2(y, x);
 }
 
 Vector2::Vector2(Vector2 &vec)
@@ -78,7 +78,7 @@ return vec2.angle() - vec1.angle();
 
 float Vector2::distance(Vector2 vec1, Vector2 vec2)
 {
-    return static_cast<float>(Vector2(vec2 - vec1).mag());
+    return Vector2(vec2 - vec1).mag();
 }
 
 std::ostream& operator<<(std::ostream& out, const Vector2& vec)
