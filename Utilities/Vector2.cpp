@@ -46,14 +46,14 @@ Vector2 Vector2::setMag(float m)
     return Vector2(x, y);
 }
 
-sf::Vector2f Vector2::setAngle(float alpha)
+Vector2 Vector2::setAngle(float alpha)
 {
     this->m_angle = alpha;
 
     x = m_mag * std::cos(m_angle);
     y = m_mag * std::sin(m_angle);
 
-    return sf::Vector2f(x, y);
+    return Vector2(x, y);
 }
 
 float Vector2::mag()
@@ -76,6 +76,11 @@ float Vector2::getAngle(Vector2 vec1, Vector2 vec2)
 return vec2.angle() - vec1.angle();
 }
 
+Vector2 Vector2::unit(Vector2 vec)
+{
+    return vec * 1.f / vec.mag();
+}
+
 float Vector2::distance(Vector2 vec1, Vector2 vec2)
 {
     return Vector2(vec2 - vec1).mag();
@@ -84,4 +89,14 @@ float Vector2::distance(Vector2 vec1, Vector2 vec2)
 std::ostream& operator<<(std::ostream& out, const Vector2& vec)
 {
     return out << "(" << vec.x << ", " << vec.y << ")";
+}
+
+Vector2 Vector2::normalize()
+{
+    m_mag = 1;
+
+    x = std::cos(m_angle);
+    y = std::sin(m_angle);
+
+    return Vector2(x, y);
 }

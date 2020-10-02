@@ -17,10 +17,12 @@ class Vector2: public sf::Vector2f
         Vector2(Vector2& vec);
 
         Vector2 setMag(float m);
-        sf::Vector2f setAngle(float alpha);
+        Vector2 setAngle(float alpha);
+        Vector2 normalize();
 
         static float getMag(Vector2 vec);
         static float getAngle(Vector2 vec1, Vector2 vec2);
+        static Vector2 unit(Vector2 vec);
 
         float mag();
         float angle();

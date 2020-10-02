@@ -17,6 +17,6 @@ class Photon
 
         Photon(float x, float y, float dir_vx, float dir_vy);
 
-        void update(float dt);
+        void update(BlackHole& blackhole, float dt);
         void draw(sf::RenderWindow& window);
 };

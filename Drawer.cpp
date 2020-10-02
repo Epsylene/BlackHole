@@ -1,7 +1,7 @@
 
 #include "Drawer.h"
 
-Drawer::Drawer(): blackHole(0, 0, 5E28), photon(0, 0, 1, 1)
+Drawer::Drawer(): blackHole(0, 0, 5E23), photon(0, 100, 1, 0)
 {
     window.create(sf::VideoMode(1280, 720), "Black hole");
 
@@ -11,7 +11,7 @@ Drawer::Drawer(): blackHole(0, 0, 5E28), photon(0, 0, 1, 1)
 
 void Drawer::update()
 {
-    dt = sfClock.getElapsedTime().asMicroseconds() / 80000.f;
+    dt = sfClock.getElapsedTime().asMicroseconds() / 1000000.f;
 
     while(window.pollEvent(sfEvent))
     {
@@ -19,7 +19,7 @@ void Drawer::update()
             window.close();
     }
 
-    photon.update(dt);
+    photon.update(blackHole, dt);
 
     sfClock.restart();
 }
