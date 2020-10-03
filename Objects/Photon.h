@@ -15,7 +15,12 @@ class Photon
 
     public:
 
-        Photon(float x, float y, float dir_vx, float dir_vy);
+        Photon();
+        Photon(float x, float y, float dir_x, float dir_y);
+
+        const Vector2& getPosition();
+        void setPosition(float x, float y);
+        void setDirection(float dir_x, float dir_y);
 
         void update(BlackHole& blackhole, float dt);
         void draw(sf::RenderWindow& window);

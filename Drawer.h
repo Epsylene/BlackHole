@@ -16,7 +16,7 @@ class Drawer
         float dt;
 
         BlackHole blackHole;
-        Photon photon;
+        std::array<Photon, 20> photons;
 
     public:
 

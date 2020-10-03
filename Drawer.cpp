@@ -1,12 +1,15 @@
 
 #include "Drawer.h"
 
-Drawer::Drawer(): blackHole(0, 0, 5E23), photon(0, 100, 1, 0)
+Drawer::Drawer(): blackHole(640, 360, 5E28)
 {
     window.create(sf::VideoMode(1280, 720), "Black hole");
 
-    blackHole.setPosition(window.getSize().x / 2.f,
-                          window.getSize().y / 2.f);
+    for (int i = 0; i < photons.size(); ++i)
+    {
+        photons[i].setPosition(0, i * 15 + 10);
+        photons[i].setDirection(1, 0);
+    }
 }
 
 void Drawer::update()
@@ -19,8 +22,14 @@ void Drawer::update()
             window.close();
     }
 
-    photon.update(blackHole, dt);
+    for (auto& ph: photons) 
+    {
+        if(Vector2::distance(ph.getPosition(), blackHole.getPosition()) > 75)
+            ph.update(blackHole, dt);
+    }
 
+//    std::cout << photons[0].getPosition();
+    
     sfClock.restart();
 }
 
@@ -29,7 +38,11 @@ void Drawer::render()
     window.clear(sf::Color::White);
 
     blackHole.draw(window);
-    photon.draw(window);
+
+    for (auto& ph: photons)
+    {
+        ph.draw(window);
+    }
 
     window.display();
 }
