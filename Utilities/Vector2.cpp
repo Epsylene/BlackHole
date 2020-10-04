@@ -33,7 +33,32 @@ Vector2::Vector2(Vector2 &vec)
     m_angle = vec.angle();
 }
 
+Vector2 Vector2::copy()
+{
+    return Vector(this->x, this->y);
+}
+
 /// Functions
+Vector2 Vector2::mult(float c)
+{
+    this->x *= c;
+    this->y *= c;
+    
+    return this;
+}
+
+Vector2 Vector2::div(float c)
+{
+    if (c == 0) {
+        std::cout << "Tried to divide by 0";
+        return void;
+    }
+    
+    this->x /= c;
+    this->y /= c;
+    
+    return this;
+}
 
 Vector2 Vector2::setMag(float m)
 {
@@ -43,7 +68,7 @@ Vector2 Vector2::setMag(float m)
     x = m_mag * std::cos(m_angle);
     y = m_mag * std::sin(m_angle);
 
-    return Vector2(x, y);
+    return this;
 }
 
 Vector2 Vector2::setAngle(float alpha)
@@ -53,7 +78,12 @@ Vector2 Vector2::setAngle(float alpha)
     x = m_mag * std::cos(m_angle);
     y = m_mag * std::sin(m_angle);
 
-    return Vector2(x, y);
+    return this;
+}
+
+float Vector2::dot()
+{
+    return std::pow(this->x, 2) + std::pow(this->y, 2);
 }
 
 float Vector2::mag()
@@ -98,5 +128,5 @@ Vector2 Vector2::normalize()
     x = std::cos(m_angle);
     y = std::sin(m_angle);
 
-    return Vector2(x, y);
+    return this;
 }
