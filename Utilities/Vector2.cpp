@@ -116,6 +116,25 @@ float Vector2::distance(Vector2 vec1, Vector2 vec2)
     return Vector2(vec2 - vec1).mag();
 }
 
+bool operator=(const Vector2 vec)
+{
+    return (x == vec.x && y == vec.y);
+}
+
+Vector2& operator+(const Vector2 vec)
+{
+    x += vec.x;
+    y += vec.y;
+    return this;
+}
+
+Vector2& operator-(const Vector2 vec)
+{
+    x -= vec.x;
+    y -= vec.y;
+    return this;
+}
+
 std::ostream& operator<<(std::ostream& out, const Vector2& vec)
 {
     return out << "(" << vec.x << ", " << vec.y << ")";
