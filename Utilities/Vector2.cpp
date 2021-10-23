@@ -123,11 +123,10 @@ std::ostream& operator<<(std::ostream& out, const Vector2& vec)
 
 Vector2 Vector2::normalize()
 {
-    float mag = static_cast<float>(std::sqrt(x*x + y*y));
-    m_mag = 1.0f;
+    m_mag = 1;
 
-    x /= mag;
-    y /= mag;
+    x = std::cos(m_angle);
+    y = std::sin(m_angle);
 
     return this;
 }
